@@ -7,13 +7,17 @@ public class MyMain {
     //     isLetter('?') => false
     //     isLetter('4') => false
     public static boolean isLetter(char c) {
-        // REPLACE WITH YOUR CODE HERE
-        return false;
+        if (c >= 97 && c <= 122 || c >= 65 && c <= 90){
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 
     // This method is given two chars as input, c1 and c2
     // The method should print out the chars between c1 and c2
-    // You can assume that c2 will always come after c2
+    // You can assume that c2 will always come after c1
     // Ex. printChars('b', 'g') => 'b'
     //                             'c'
     //                             'd'
@@ -21,7 +25,10 @@ public class MyMain {
     //                             'f'
     //                             'g'
     public static void printChars(char c1, char c2) {
-        // REPLACE WITH YOUR CODE HERE
+        for (int i = c1; i<=c2; i++){
+            char ch = (char)(i);
+            System.out.println(ch);
+        }
     }
 
     // Given a char ch, and returns the next letter in the alphabet.
@@ -34,8 +41,18 @@ public class MyMain {
     //     nextLetter('a') => 'b'
     //     nextLetter('z') => 'a'
     public static char nextLetter(char ch) {
-        // REPLACE WITH YOUR CODE HERE
-        return ' ';
+        if (ch >= 'A' && ch < 'Z') {
+            ch = (char) (ch + 1);
+            return ch;
+        } else if (ch == 'Z') {
+            return 'A';
+        } else if (ch >= 'a' && ch < 'z') {
+            ch = (char) (ch + 1);
+            return ch;
+        } else if (ch == 'z') {
+            return 'a';
+        }
+        return ch;
     }
 
     // Similar to the previous example, the method is given a char ch. However, the method
@@ -46,8 +63,18 @@ public class MyMain {
     //     nextNextNextLetter('a') => 'd'
     //     nextNextNextLetter('z') => 'c'
     public static char nextNextNextLetter(char ch) {
-        // REPLACE WITH YOUR CODE HERE
-        return ' ';
+        if (ch >= 'A' && ch < 'Z') {
+            ch = (char) (ch + 3);
+            return ch;
+        } else if (ch == 'Z') {
+            return 'C';
+        } else if (ch >= 'a' && ch < 'z') {
+            ch = (char) (ch + 3);
+            return ch;
+        } else if (ch == 'z') {
+            return 'c';
+        }
+        return ch;
     }
 
 
